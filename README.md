@@ -1,7 +1,6 @@
 🛒 Simple Shopping Cart – ASE Challenge
 
-A minimal full-stack e-commerce app built for the Associate Software Engineer (ASE) Challenge.
-This project demonstrates a clean, functional shopping cart system using React + TypeScript (frontend) and Node.js + Express (backend).
+A minimal full-stack e-commerce app built for the Associate Software Engineer (ASE) Challenge, demonstrating a clean, functional shopping cart system using React + TypeScript (frontend) and Node.js + Express (backend).
 
 🎯 Project Goal
 
@@ -26,11 +25,11 @@ POST /api/checkout → accepts cart items, logs order in console, returns succes
 
 Frontend (React + TypeScript + Vite)
 
-Product grid with images, names, prices
+Product grid with images, names, and prices
 
 “Add to Cart” button on each product
 
-Cart sidebar (offcanvas) with item details, quantities, and total
+Cart sidebar (offcanvas) showing item details, quantities, and total
 
 “Checkout” button → sends cart to backend
 
@@ -64,29 +63,30 @@ CORS middleware
 
 JSON-based product data (items.json)
 
-Testing:
+Testing (Optional):
 
-Optional: Jest + Supertest (for backend API testing)
+Jest + Supertest (for backend API testing)
 
 📂 Project Structure
 shopping-cart/
 ├── backend/
-│   ├── data/items.json       # Hardcoded products
-│   ├── server.js             # Express backend
+│   ├── data/items.json        # Hardcoded products
+│   ├── server.js              # Express backend
 │   ├── package.json
 │   └── package-lock.json
 │
 ├── public/
-│   └── imgs/                 # Product images
+│   └── imgs/                  # Product images
 │
 ├── src/
-│   ├── components/           # UI components (CartItem, ShoppingCart, StoreItem, Navbar)
-│   ├── context/              # Shopping cart context
-│   ├── hooks/                # useLocalStorage
-│   ├── pages/                # Store, ProductDetails
-│   ├── utilities/            # formatCurrency
+│   ├── components/            # UI components (CartItem, ShoppingCart, StoreItem, Navbar)
+│   ├── context/               # Shopping cart context
+│   ├── hooks/                 # useLocalStorage
+│   ├── pages/                 # Store, ProductDetails
+│   ├── utilities/             # formatCurrency
 │   ├── App.tsx
 │   └── main.tsx
+│
 ├── package.json
 ├── tsconfig.json
 ├── tsconfig.node.json
@@ -125,10 +125,15 @@ If you add backend tests with Jest + Supertest:
 cd backend
 npm test
 
+
+Expected:
+
+✅ /api/products returns JSON with products
+
+✅ Response has correct structure (id, name, price, imgUrl)
+
 📦 Sample API
-
 GET /api/products
-
 {
   "success": true,
   "data": [
@@ -137,10 +142,9 @@ GET /api/products
   "count": 10
 }
 
-
 POST /api/checkout
 
-Request Body
+Request Body:
 
 {
   "cartItems": [
@@ -150,7 +154,7 @@ Request Body
 }
 
 
-Response
+Response:
 
 {
   "success": true,
@@ -162,9 +166,9 @@ Response
 
 📖 Assumptions & Design Choices
 
-Products stored in JSON file (items.json) instead of a database (per challenge requirements)
+Products stored in a JSON file (items.json) instead of a database (per challenge requirements)
 
-Cart fully client-side with persistence via localStorage
+Cart is fully client-side with persistence via localStorage
 
 Checkout is simulated → logs orders on backend
 
@@ -172,17 +176,18 @@ Responsive UI built using React-Bootstrap
 
 📹 Demo
 
+https://drive.google.com/file/d/1tohjjMrudnhM4-9w6WmmWhXVWBkFVmMY/view?usp=sharing
 
 ✅ Completion Checklist
 
- Backend API returning hardcoded products
+Backend API returning hardcoded products
 
- Checkout endpoint logging orders
+Checkout endpoint logging orders
 
- Frontend product grid + cart state management
+Frontend product grid + cart state management
 
- Cart sidebar with quantities + total
+Cart sidebar with quantities + total
 
- Checkout integration with backend
+Checkout integration with backend
 
- Cart persistence using localStorage
+Cart persistence using localStorage

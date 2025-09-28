@@ -1,76 +1,60 @@
-🛒 Simple Shopping Cart – ASE Challenge
+# 🛒 Simple Shopping Cart – ASE Challenge
 
-A minimal full-stack e-commerce app built for the Associate Software Engineer (ASE) Challenge, demonstrating a clean, functional shopping cart system using React + TypeScript (frontend) and Node.js + Express (backend).
+A **minimal full-stack e-commerce application** built for the **Associate Software Engineer (ASE) Challenge**, demonstrating a clean, functional shopping cart system using **React + TypeScript** (frontend) and **Node.js + Express** (backend).
 
-🎯 Project Goal
+## 🎯 Project Goal
 
 Build a small e-commerce site where users can:
 
-View a list of products
+- View a list of products
+- Add/remove items in a shopping cart
+- See quantities and total price
+- Checkout (send cart data to backend)
 
-Add/remove items in a shopping cart
+## 🚀 Features
 
-See quantities and total price
+### ✅ Core Features
 
-Checkout (send cart data to backend)
+#### Backend (Express.js)
+- `GET /api/products` → Returns hardcoded JSON of products
+- `POST /api/checkout` → Accepts cart items, logs order in console, returns success response
 
-🚀 Features
-✅ Core Features
+#### Frontend (React + TypeScript + Vite)
+- Product grid with images, names, and prices
+- "Add to Cart" button on each product
+- Cart sidebar (offcanvas) showing item details, quantities, and total
+- "Checkout" button → Sends cart to backend
 
-Backend (Express.js)
+### ✨ Bonus Features Implemented
 
-GET /api/products → returns hardcoded JSON of products
+- Quantity updates inside the cart
+- Cart persisted with **localStorage**
+- Checkout success/error alerts with backend integration
 
-POST /api/checkout → accepts cart items, logs order in console, returns success response
+## 🛠️ Tech Stack
 
-Frontend (React + TypeScript + Vite)
+### Frontend
+- React 18 + TypeScript
+- Vite
+- React Router
+- React Bootstrap
+- Context API + custom `useLocalStorage` hook
 
-Product grid with images, names, and prices
+### Backend
+- Node.js + Express.js
+- CORS middleware
+- JSON-based product data (`items.json`)
 
-“Add to Cart” button on each product
+### Testing (Optional)
+- Jest + Supertest (for backend API testing)
 
-Cart sidebar (offcanvas) showing item details, quantities, and total
+## 📂 Project Structure
 
-“Checkout” button → sends cart to backend
-
-✨ Bonus Features Implemented
-
-Quantity updates inside the cart
-
-Cart persisted with localStorage
-
-Checkout success/error alerts with backend integration
-
-🛠️ Tech Stack
-
-Frontend:
-
-React 18 + TypeScript
-
-Vite
-
-React Router
-
-React Bootstrap
-
-Context API + custom useLocalStorage hook
-
-Backend:
-
-Node.js + Express.js
-
-CORS middleware
-
-JSON-based product data (items.json)
-
-Testing (Optional):
-
-Jest + Supertest (for backend API testing)
-
-📂 Project Structure
+```
 shopping-cart/
 ├── backend/
-│   ├── data/items.json        # Hardcoded products
+│   ├── data/
+│   │   └── items.json         # Hardcoded products
 │   ├── server.js              # Express backend
 │   ├── package.json
 │   └── package-lock.json
@@ -79,7 +63,11 @@ shopping-cart/
 │   └── imgs/                  # Product images
 │
 ├── src/
-│   ├── components/            # UI components (CartItem, ShoppingCart, StoreItem, Navbar)
+│   ├── components/            # UI components
+│   │   ├── CartItem.tsx
+│   │   ├── ShoppingCart.tsx
+│   │   ├── StoreItem.tsx
+│   │   └── Navbar.tsx
 │   ├── context/               # Shopping cart context
 │   ├── hooks/                 # useLocalStorage
 │   ├── pages/                 # Store, ProductDetails
@@ -92,70 +80,83 @@ shopping-cart/
 ├── tsconfig.node.json
 ├── vite.config.ts
 └── README.md
+```
 
-⚡ Quick Start
-1️⃣ Backend Setup
+## ⚡ Quick Start
+
+### 1️⃣ Backend Setup
+
+```bash
 cd backend
 npm install
 node server.js
+```
 
+**Backend runs at:** `http://localhost:5000`
 
-Backend runs at: http://localhost:5000
+**Available Endpoints:**
+- `GET /api/products`
+- `POST /api/checkout`
 
-Endpoints:
+### 2️⃣ Frontend Setup
 
-GET /api/products
-
-POST /api/checkout
-
-2️⃣ Frontend Setup
+```bash
 cd ..
 npm install
 npm run dev
+```
 
+**Frontend runs at:** `http://localhost:5173` (Vite default)
 
-Frontend runs at: http://localhost:5173 (Vite default)
+> **Note:** Make sure frontend fetch calls point to your backend URL (`http://localhost:5000/api/checkout`)
 
-Make sure frontend fetch calls point to your backend URL (http://localhost:5000/api/checkout).
+## 🧪 Running Tests (Optional)
 
-🧪 Running Tests (Optional)
+If you add backend tests with **Jest + Supertest**:
 
-If you add backend tests with Jest + Supertest:
-
+```bash
 cd backend
 npm test
+```
 
+**Expected Test Results:**
+- ✅ `/api/products` returns JSON with products
+- ✅ Response has correct structure (`id`, `name`, `price`, `imgUrl`)
 
-Expected:
+## 📦 API Documentation
 
-✅ /api/products returns JSON with products
+### GET /api/products
 
-✅ Response has correct structure (id, name, price, imgUrl)
-
-📦 Sample API
-GET /api/products
+**Response:**
+```json
 {
   "success": true,
   "data": [
-    { "id": 1, "name": "iPhone 15 Pro", "price": 119900, "imgUrl": "/imgs/iphone15.png" }
+    {
+      "id": 1,
+      "name": "iPhone 15 Pro",
+      "price": 119900,
+      "imgUrl": "/imgs/iphone15.png"
+    }
   ],
   "count": 10
 }
+```
 
-POST /api/checkout
+### POST /api/checkout
 
-Request Body:
-
+**Request Body:**
+```json
 {
   "cartItems": [
     { "id": 1, "quantity": 2 },
     { "id": 3, "quantity": 1 }
   ]
 }
+```
 
-
-Response:
-
+**Response:**
+```json
 {
   "success": true,
   "message": "Order placed successfully!",
@@ -163,31 +164,34 @@ Response:
   "totalAmount": 229800,
   "itemCount": 2
 }
+```
 
-📖 Assumptions & Design Choices
+## 📖 Assumptions & Design Choices
 
-Products stored in a JSON file (items.json) instead of a database (per challenge requirements)
+- **Products Storage:** Products are stored in a **JSON file** (`items.json`) instead of a database (per challenge requirements)
+- **Cart Management:** Cart is fully client-side with persistence via **localStorage**
+- **Checkout Process:** Checkout is simulated → logs orders on backend console
+- **UI Framework:** Responsive UI built using **React-Bootstrap**
+- **State Management:** Uses React Context API for cart state management
 
-Cart is fully client-side with persistence via localStorage
-
-Checkout is simulated → logs orders on backend
-
-Responsive UI built using React-Bootstrap
-
-📹 Demo
-
+## 🎬 Demo
 https://drive.google.com/file/d/1tohjjMrudnhM4-9w6WmmWhXVWBkFVmMY/view?usp=sharing
 
-✅ Completion Checklist
+## ✅ Completion Checklist
 
-Backend API returning hardcoded products
+- [x] Backend API returning hardcoded products
+- [x] Checkout endpoint logging orders
+- [x] Frontend product grid + cart state management
+- [x] Cart sidebar with quantities + total
+- [x] Checkout integration with backend
+- [x] Cart persistence using **localStorage**
 
-Checkout endpoint logging orders
+## 🚀 Future Enhancements
 
-Frontend product grid + cart state management
+- [ ] User authentication
+- [ ] Product search and filtering
+- [ ] Order history
+- [ ] Payment integration
+- [ ] Database integration
+- [ ] Unit and integration tests
 
-Cart sidebar with quantities + total
-
-Checkout integration with backend
-
-Cart persistence using localStorage

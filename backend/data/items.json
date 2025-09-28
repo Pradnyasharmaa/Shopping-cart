@@ -1,0 +1,112 @@
+[
+  {
+    "id": 1,
+    "name": "Samsung Galaxy S24 Ultra",
+    "price": 107500,
+    "imgUrl": "/imgs/S24ultra.png",
+    "description": "Snapdragon 8 Gen 3, 200MP Camera, 6.8-inch Dynamic AMOLED 2X Display",
+    "category": "Samsung",
+    "storage": "256 GB",
+    "camera": "200MP + 12MP + 10MP + 10MP",
+    "battery": "5000 mAh"
+  },
+  {
+    "id": 2,
+    "name": "Apple iPhone 15 Pro Max",
+    "price": 119900,
+    "imgUrl": "/imgs/Iphone15.png",
+    "description": "A17 Bionic Chip, Titanium Design, Advanced Camera System",
+    "category": "Apple",
+    "storage": "256 GB",
+    "camera": "48MP Main",
+    "battery": "Up to 29 hours video playback"
+  },
+  {
+    "id": 3,
+    "name": "OnePlus 12",
+    "price": 89900,
+    "imgUrl": "/imgs/oneplus12.png",
+    "description": "Snapdragon 8 Gen 3, 120Hz AMOLED Display, 50MP Hasselblad Camera",
+    "category": "OnePlus",
+    "storage": "256 GB",
+    "camera": "50MP + 48MP + 64MP",
+    "battery": "5400 mAh"
+  },
+  {
+    "id": 4,
+    "name": "Samsung Galaxy S24",
+    "price": 79999,
+    "imgUrl": "/imgs/s24.png",
+    "description": "Exynos 2400, Compact Design, Versatile Camera System",
+    "category": "Samsung",
+    "storage": "128 GB",
+    "camera": "50MP + 12MP + 10MP",
+    "battery": "4000 mAh"
+  },
+  {
+    "id": 5,
+    "name": "Apple iPhone 15 Pro",
+    "price": 99900,
+    "imgUrl": "/imgs/15pro.png",
+    "description": "A17 Bionic Chip, Pro Camera System, Durable Design",
+    "category": "Apple",
+    "storage": "128 GB",
+    "camera": "48MP Main",
+    "battery": "Up to 28 hours video playback"
+  },
+  {
+    "id": 6,
+    "name": "OnePlus 13",
+    "price": 69900,
+    "imgUrl": "/imgs/oneplus13.png",
+    "description": "Snapdragon 8 Gen 2, 120Hz Fluid AMOLED Display, Fast Charging",
+    "category": "OnePlus",
+    "storage": "128 GB",
+    "camera": "50MP + 48MP + 32MP",
+    "battery": "5000 mAh"
+  },
+  {
+    "id": 7,
+    "name": "Samsung Galaxy A54",
+    "price": 44900,
+    "imgUrl": "/imgs/a54.png",
+    "description": "Awesome Camera. Awesome Screen. Awesome 5G",
+    "category": "Samsung",
+    "storage": "128 GB",
+    "camera": "50MP + 12MP + 5MP",
+    "battery": "5000 mAh"
+  },
+  {
+    "id": 8,
+    "name": "Apple iPhone SE (3rd generation)",
+    "price": 42900,
+    "imgUrl": "/imgs/se3.png",
+    "description": "A15 Bionic chip, Superfast 5G, and the best battery life in an iPhone SE",
+    "category": "Apple",
+    "storage": "64 GB",
+    "camera": "12MP Wide camera",
+    "battery": "Up to 15 hours video playback"
+  },
+  {
+    "id": 9,
+    "name": "OnePlus Nord N30 5G",
+    "price": 27900,
+    "imgUrl": "/imgs/n03.png",
+    "description": "108MP Camera, 120Hz AMOLED screen",
+    "category": "OnePlus",
+    "storage": "128 GB",
+    "camera": "108MP + 2MP + 2MP",
+    "battery": "5000 mAh"
+  },
+  {
+    "id": 10,
+    "name": "Samsung Galaxy Z Fold5",
+    "price": 179999,
+    "imgUrl": "/imgs/fold5.png",
+    "description": "The ultimate multitasking powerhouse with foldable design",
+    "category": "Samsung",
+    "storage": "256 GB",
+    "camera": "50MP + 12MP + 10MP",
+    "battery": "4400 mAh"
+  }
+]
